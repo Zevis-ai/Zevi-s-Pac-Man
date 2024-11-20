@@ -1,4 +1,11 @@
 package game.Frame;
 
-public class MyJLayeredPane {
+import javax.swing.*;
+import java.awt.*;
+
+public class MyJLayeredPane extends JLayeredPane {
+
+    public MyJLayeredPane(){
+        setPreferredSize(new Dimension(D_Map.MAP_WIDTH_SIZE,D_Map.MAP_HEIGHT_SIZE));
+    }
 }
