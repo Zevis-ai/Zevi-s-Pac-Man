@@ -9,5 +9,6 @@ public class Game {
             StartScreen startScreen = new StartScreen();
             startScreen.setVisible(true);
         });
+        System.out.println("z");
     }
 }
