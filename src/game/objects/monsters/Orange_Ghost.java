@@ -5,12 +5,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
-public class Red_Ghost extends JPanel implements Ghost {
+public class Orange_Ghost extends JPanel implements Ghost {
 
     private Image image;
 
-    public Red_Ghost() {
-        setBounds(260, 200, 20, 20);
+    public Orange_Ghost() {
+        setBounds(260, 260, 20, 20);
         setOpaque(false);
         loadImage();
     }
@@ -18,7 +18,7 @@ public class Red_Ghost extends JPanel implements Ghost {
     @Override
     public void loadImage() {
         try {
-            image = ImageIO.read(getClass().getResource("/game/img/redGhost.png"));
+            image = ImageIO.read(getClass().getResource("/game/img/orangeGhost.png"));
         } catch (IOException e) {
             // אם התמונה לא נמצאה, נצייר צורה פשוטה במקום
             System.err.println("Could not load ghost image: " + e.getMessage());
