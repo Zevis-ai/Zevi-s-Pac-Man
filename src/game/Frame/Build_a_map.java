@@ -1,10 +1,17 @@
 package game.Frame;
 
+import game.objects.coin.Coin;
+import game.objects.coin.CoinArray;
+
 import javax.swing.*;
 import java.awt.*;
+
+import static game.objects.coin.CoinArray.coins;
+
 public class Build_a_map {
 
     public static void buildMap(JPanel mapjpanel){
+        CoinArray.initCoins();  // Initialize coins array before building the map
         for (int i = 0; i < D_Map.D_Map1.length; i++) {
             for (int j = 0; j < D_Map.D_Map1[0].length; j++) {
                 JPanel jPanel1 = new JPanel();
@@ -15,7 +22,7 @@ public class Build_a_map {
                     coin.setPreferredSize(new Dimension(6,6));
                     coin.setBackground(Color.YELLOW);
                     jPanel1.add(coin);
-//                    coins[i][j] = coin;
+                    coins[i][j] = coin;
 //                    allScore++;
 
                 }

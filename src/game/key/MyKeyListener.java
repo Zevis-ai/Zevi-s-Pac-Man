@@ -3,6 +3,7 @@ package game.key;
 import game.Frame.D_Map;
 import game.objects.Player.Direction;
 import game.objects.Player.PacManPlayer;
+import game.objects.coin.CoinArray;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -90,13 +91,19 @@ public class MyKeyListener implements KeyListener {
             D_Map.D_Map1[mapY][mapX] != 1) {
             
             player.move(newX, newY);
+            // קריאה להסרת מטבע במיקום החדש
+            CoinArray.removeCoin(mapX, mapY);
         }
+        cave(newX,newY);
+    }
 
-        // טלפורטציה בצדדים
-        if (newX >= D_Map.MAP_WIDTH_SIZE - D_Map.CELL_SIZE) {
-            player.move(0, currentY);
-        } else if (newX < 0) {
-            player.move(D_Map.MAP_WIDTH_SIZE - D_Map.CELL_SIZE, currentY);
+    private void cave(int newX, int newY){
+        if (newX == 520 && newY == 280) {
+            player.setLocation(0, 280);
+        }
+        if (newX == 0 && newY == 280) {
+            player.setLocation(520, 280);
         }
     }
+
 }
