@@ -6,10 +6,12 @@ import javax.swing.*;
 import java.awt.*;
 import game.Frame.MyJPanel;
 import game.Frame.D_Map;
+import game.objects.monsters.Blue_Ghost;
 
 public class MyJLayeredPane extends JLayeredPane {
     private MyJPanel mapPanel;
     private PacManPlayer player;
+    private Blue_Ghost blue_ghost;
 
     public MyJLayeredPane(){
         setLayout(null);  // חשוב! כדי שה-bounds יעבדו
@@ -21,10 +23,12 @@ public class MyJLayeredPane extends JLayeredPane {
         
         // יצירת השחקן
         player = new PacManPlayer();
+        blue_ghost = new Blue_Ghost();
         
         // הוספת השכבות
         add(mapPanel, Integer.valueOf(1));    // שכבת המפה
-        add(player, Integer.valueOf(2));      // שכבת השחקן מעל המפה
+        add(player, Integer.valueOf(2));
+        add(blue_ghost, Integer.valueOf(4));// שכבת השחקן מעל המפה
         
         // הוספת תצוגת ניקוד וחיים
         add(Messages.scoreLabel, Integer.valueOf(3));
@@ -35,6 +39,7 @@ public class MyJLayeredPane extends JLayeredPane {
         mapPanel.setVisible(true);
         Messages.scoreLabel.setVisible(true);
         Messages.livesLabel.setVisible(true);
+        blue_ghost.setVisible(true);
     }
     
     public PacManPlayer getPlayer() {
