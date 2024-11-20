@@ -9,6 +9,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.Timer;
 
+import static game.messages.Messages.ScoreAnnouncement;
+
 public class MyKeyListener implements KeyListener {
     private final PacManPlayer player;
     private Timer moveTimer;
@@ -84,7 +86,7 @@ public class MyKeyListener implements KeyListener {
         // המרת קואורדינטות המסך לקואורדינטות המפה
         int mapX = newX / D_Map.CELL_SIZE;
         int mapY = newY / D_Map.CELL_SIZE;
-
+        ScoreAnnouncement(mapX, mapY);
         // בדיקת גבולות המפה והתנגשות עם קירות
         if (mapX >= 0 && mapX < D_Map.D_Map1[0].length &&
             mapY >= 0 && mapY < D_Map.D_Map1.length &&
@@ -105,5 +107,4 @@ public class MyKeyListener implements KeyListener {
             player.setLocation(520, 280);
         }
     }
-
 }

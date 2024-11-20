@@ -10,6 +10,9 @@ import static game.objects.coin.CoinArray.coins;
 
 public class Build_a_map {
 
+    public static int score;
+    public static int allScore = 0;
+
     public static void buildMap(JPanel mapjpanel){
         CoinArray.initCoins();  // Initialize coins array before building the map
         for (int i = 0; i < D_Map.D_Map1.length; i++) {
@@ -23,7 +26,7 @@ public class Build_a_map {
                     coin.setBackground(Color.YELLOW);
                     jPanel1.add(coin);
                     coins[i][j] = coin;
-//                    allScore++;
+                    allScore++;
 
                 }
                 if (D_Map.D_Map1[i][j] == 1) {

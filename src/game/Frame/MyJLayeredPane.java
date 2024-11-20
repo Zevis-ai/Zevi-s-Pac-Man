@@ -1,6 +1,7 @@
 package game.Frame;
 
 import game.objects.Player.PacManPlayer;
+import game.messages.Messages;
 import javax.swing.*;
 import java.awt.*;
 import game.Frame.MyJPanel;
@@ -25,9 +26,15 @@ public class MyJLayeredPane extends JLayeredPane {
         add(mapPanel, Integer.valueOf(1));    // שכבת המפה
         add(player, Integer.valueOf(2));      // שכבת השחקן מעל המפה
         
-        // וידוא שהשחקן נראה
+        // הוספת תצוגת ניקוד וחיים
+        add(Messages.scoreLabel, Integer.valueOf(3));
+        add(Messages.livesLabel, Integer.valueOf(3));
+        
+        // וידוא שהשחקן והתצוגה נראים
         player.setVisible(true);
         mapPanel.setVisible(true);
+        Messages.scoreLabel.setVisible(true);
+        Messages.livesLabel.setVisible(true);
     }
     
     public PacManPlayer getPlayer() {
