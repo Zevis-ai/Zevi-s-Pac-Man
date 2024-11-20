@@ -2,6 +2,8 @@ package game.Frame;
 
 public class D_Map {
 
+    public static final int CELL_SIZE = 20;  // גודל כל תא במפה
+
     public static final int[][] D_Map1 = {
             // 0 = מותר ללכת ויש מטבע ,1= קירות, 2 = פרסים, 3 = מותר ללכת ואין מטבע, 5 = נקודת התחלה, 678 = מפלצות
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -41,7 +43,6 @@ public class D_Map {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
     };
 
-    static final int MAP_WIDTH_SIZE = D_Map1.length * 20;
-    static final int MAP_HEIGHT_SIZE = D_Map1[0].length * 20;
-
+    public static final int MAP_WIDTH_SIZE = D_Map1[0].length * CELL_SIZE;
+    public static final int MAP_HEIGHT_SIZE = D_Map1.length * CELL_SIZE;
 }
