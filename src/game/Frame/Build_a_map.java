@@ -12,6 +12,7 @@ public class Build_a_map {
 
     public static int score;
     public static int allScore = 0;
+    public static Coin coin;
 
     public static void buildMap(JPanel mapjpanel){
         CoinArray.initCoins();  // Initialize coins array before building the map
@@ -36,8 +37,8 @@ public class Build_a_map {
                 if (D_Map.D_Map1[i][j] == 2) {
 
                     jPanel1.setBackground(Color.BLACK); // הגדרת רקע שחור
-//                    coin = new Coin();
-//                    jPanel1.add(coin);
+                    coin = new Coin();
+                    jPanel1.add(coin);
 
                 }
                 if (D_Map.D_Map1[i][j] == 3) {
