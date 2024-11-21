@@ -8,6 +8,7 @@ import java.util.Map;
 public class PacManPlayer extends JPanel {
     private Map<Direction, ImageIcon> pacmanImages;
     private Direction currentDirection;
+    public static int life = 3;
     private int gifWidth = 20;  // רוחב מותאם
     private int gifHeight = 20; // גובה מותאם
 

@@ -7,7 +7,7 @@ import game.objects.coin.CoinArray;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import javax.swing.Timer;
+import javax.swing.*;
 
 import static game.messages.Messages.ScoreAnnouncement;
 
@@ -22,7 +22,7 @@ public class MyKeyListener implements KeyListener {
     }
 
     private void setupMoveTimer() {
-        moveTimer = new Timer(100, e -> {
+        moveTimer = new Timer(200, e -> {
             if (player.getDirection() != null) {
                 movePlayer();
             }
@@ -87,16 +87,31 @@ public class MyKeyListener implements KeyListener {
         int mapX = newX / D_Map.CELL_SIZE;
         int mapY = newY / D_Map.CELL_SIZE;
         ScoreAnnouncement(mapX, mapY);
-        // בדיקת גבולות המפה והתנגשות עם קירות
-        if (mapX >= 0 && mapX < D_Map.D_Map1[0].length &&
-            mapY >= 0 && mapY < D_Map.D_Map1.length &&
-            D_Map.D_Map1[mapY][mapX] != 1) {
-            
-            player.move(newX, newY);
-            // קריאה להסרת מטבע במיקום החדש
-            CoinArray.removeCoin(mapX, mapY);
-        }
+
+        cenMove(mapX, mapY, player, newX, newY);
+//        // בדיקת גבולות המפה והתנגשות עם קירות
+//        if (mapX >= 0 && mapX < D_Map.D_Map1[0].length &&
+//            mapY >= 0 && mapY < D_Map.D_Map1.length &&
+//            D_Map.D_Map1[mapY][mapX] != 1) {
+//
+//            player.move(newX, newY);
+//            // קריאה להסרת מטבע במיקום החדש
+//            CoinArray.removeCoin(mapX, mapY);
+//        }
         cave(newX,newY);
+    }
+
+    public static void cenMove(int mapX, int mapY, JPanel panel, int newX, int newY){
+        if (mapX >= 0 && mapX < D_Map.D_Map1[0].length &&
+                mapY >= 0 && mapY < D_Map.D_Map1.length &&
+                D_Map.D_Map1[mapY][mapX] != 1) {
+
+            panel.move(newX, newY);
+            // קריאה להסרת מטבע במיקום החדש
+            if (panel instanceof PacManPlayer){
+                CoinArray.removeCoin(mapX, mapY);
+            }
+        }
     }
 
     private void cave(int newX, int newY){

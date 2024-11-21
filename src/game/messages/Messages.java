@@ -31,6 +31,11 @@ public class Messages {
         System.exit(0); // מפסיק משחק
     }
 
+    public static void gameOver(int score) {
+        JOptionPane.showMessageDialog(null, " 💀💀  💀💀  💀💀  💀💀 " + "הניקוד שלך הוא " + score); //+ Game.score
+        System.exit(0); // מפסיק משחק
+    }
+
 
     public static void ScoreAnnouncement(int mapX, int mapY){
         if (coins[mapY][mapX] != null) {

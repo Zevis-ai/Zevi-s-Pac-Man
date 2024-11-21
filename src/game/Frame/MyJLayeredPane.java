@@ -56,6 +56,11 @@ public class MyJLayeredPane extends JLayeredPane {
 
         blue_ghost.setVisible(true);
         orange_ghost.setVisible(true);
+        pink_ghost.setVisible(true);
+        red_ghost.setVisible(true);
+
+        // Set player reference for ghosts
+        pink_ghost.setPlayer(player);
     }
     
     public PacManPlayer getPlayer() {
