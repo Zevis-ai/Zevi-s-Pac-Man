@@ -1,4 +1,4 @@
-# 🎮 Zevis Pac-Man Game 👻
+# 🎮 Zevi's Pac-Man Game 👻
 
 <div align="center">
   <img src="https://media.giphy.com/media/gRxjhVNfFgqI0/giphy.gif" width="300" />
@@ -13,6 +13,8 @@ Welcome to Zevi's Pac-Man - a Java implementation of the classic arcade game! Cr
 </div>
 
 ## ✨ Features 
+
+
 
 
 - 👾 Classic Pac-Man gameplay mechanics
