@@ -8,7 +8,7 @@ public class Game {
     public static void main(String[] args) {
         new MyFrame();
 
-        //הודעת פתיחה
+//        הודעת פתיחה
 //        SwingUtilities.invokeLater(() -> {
 //            StartScreen startScreen = new StartScreen();
 //            startScreen.setVisible(true);

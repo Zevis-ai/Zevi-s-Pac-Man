@@ -220,7 +220,7 @@ public class Pink_Ghost extends JPanel implements Ghost {
     }
 
     private void setupMoveTimer() {
-        moveTimer = new Timer(150, e -> moveGhost());
+        moveTimer = new Timer(250, e -> moveGhost());
         moveTimer.start();
     }
 
