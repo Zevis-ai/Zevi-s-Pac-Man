@@ -6,13 +6,14 @@
 
 ## 🕹️ About The Project
 
-Welcome to Zevis Pac-Man - a Java implementation of the classic arcade game! Created by Zeevi Friedman, this project brings the nostalgic Pac-Man experience to life with modern programming practices.
+Welcome to Zevi's Pac-Man - a Java implementation of the classic arcade game! Created by Zevi Friedman, this project brings the nostalgic Pac-Man experience to life with modern programming practices.
 
 <div align="center">
   <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="200" />
 </div>
 
-## ✨ Features
+## ✨ Features 
+
 
 - 👾 Classic Pac-Man gameplay mechanics
 - 👻 Four unique ghosts with different personalities
