@@ -18,6 +18,8 @@ public class MyJLayeredPane extends JLayeredPane {
     private Pink_Ghost pink_ghost;
     private Red_Ghost red_ghost;
 
+    public static game.sound.Sound sound = new game.sound.Sound();
+
     public MyJLayeredPane(){
         setLayout(null);  // חשוב! כדי שה-bounds יעבדו
         setPreferredSize(new Dimension(D_Map.MAP_WIDTH_SIZE, D_Map.MAP_HEIGHT_SIZE));
@@ -59,8 +61,11 @@ public class MyJLayeredPane extends JLayeredPane {
         pink_ghost.setVisible(true);
         red_ghost.setVisible(true);
 
-        // Set player reference for ghosts
-        pink_ghost.setPlayer(player);
+//        // Set player reference for ghosts
+//        blue_ghost.setPlayer(player);
+//        orange_ghost.setPlayer(player);
+//        pink_ghost.setPlayer(player);
+//        red_ghost.setPlayer(player);
     }
     
     public PacManPlayer getPlayer() {
@@ -69,5 +74,16 @@ public class MyJLayeredPane extends JLayeredPane {
     
     public MyJPanel getMapPanel() {
         return mapPanel;
+    }
+
+    public static void playMusic(int i){
+        sound.setFile(i);
+        sound.play();
+        sound.loop();
+    }
+
+    public static void playSE(int i){
+        sound.setFile(i);
+        sound.play();
     }
 }

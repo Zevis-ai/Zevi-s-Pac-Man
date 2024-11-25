@@ -86,7 +86,7 @@ public class MyKeyListener implements KeyListener {
         // המרת קואורדינטות המסך לקואורדינטות המפה
         int mapX = newX / D_Map.CELL_SIZE;
         int mapY = newY / D_Map.CELL_SIZE;
-        ScoreAnnouncement(mapX, mapY);
+//        ScoreAnnouncement(mapX, mapY);
 
         cenMove(mapX, mapY, player, newX, newY);
 //        // בדיקת גבולות המפה והתנגשות עם קירות
@@ -110,9 +110,12 @@ public class MyKeyListener implements KeyListener {
             // קריאה להסרת מטבע במיקום החדש
             if (panel instanceof PacManPlayer){
                 CoinArray.removeCoin(mapX, mapY);
+                ScoreAnnouncement(mapX,mapY);
             }
         }
     }
+
+    // הגדרת מערה
 
     private void cave(int newX, int newY){
         if (newX == 520 && newY == 280) {
