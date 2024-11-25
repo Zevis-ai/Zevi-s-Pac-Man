@@ -6,14 +6,13 @@
 
 ## 🕹️ About The Project
 
-Welcome to Zevi's Pac-Man - a Java implementation of the classic arcade game! Created by Zevi Friedman, this project brings the nostalgic Pac-Man experience to life with modern programming practices.
+Welcome to Zevis Pac-Man - a Java implementation of the classic arcade game! Created by Zeevi Friedman, this project brings the nostalgic Pac-Man experience to life with modern programming practices.
 
 <div align="center">
   <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="200" />
 </div>
 
-## ✨ Features 
-
+## ✨ Features
 
 - 👾 Classic Pac-Man gameplay mechanics
 - 👻 Four unique ghosts with different personalities
@@ -34,6 +33,10 @@ Just clone the repository and run the main class to start playing!
   <img src="https://media.giphy.com/media/XK8kZKJSPTziw/giphy.gif" width="250" />
 </div>
 
+<div align="center">
+  <img src="https://github.com/Zevis-ai/Zevi-s-Pac-Man/blob/master/src/game/img/%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%9E%D7%A1%D7%9A%202024-11-25%20145907.png?raw=true" width="500" />
+</div>
+
 ## 🎮 How to Play
 
 - Use the arrow keys to move Pac-Man
@@ -51,7 +54,7 @@ This game is built using:
 
 ## 🌟 Credits
 
-Created with ❤️ by Zeevi Friedman
+Created with ❤️ by Zevi Friedman
 
 <div align="center">
   <img src="https://media.giphy.com/media/LMcB8XospGZO8UQq87/giphy.gif" width="300" />
