@@ -3,8 +3,7 @@ package game.messages;
 import javax.swing.*;
 import java.awt.*;
 
-import static game.Frame.Build_a_map.allScore;
-import static game.Frame.Build_a_map.score;
+import static game.Frame.Build_a_map.*;
 import static game.objects.coin.CoinArray.coins;
 
 public class Messages {
@@ -36,14 +35,14 @@ public class Messages {
         System.exit(0); // מפסיק משחק
     }
 
-
+ // הודעת ציון
     public static void ScoreAnnouncement(int mapX, int mapY){
         if (coins[mapY][mapX] != null) {
             coins[mapY][mapX].setVisible(false);
             coins[mapY][mapX] = null;
             score++;
             Messages.scoreLabel.setText("ניקוד: " + score);
-            Messages.livesLabel.setText("חיים: ");
+          //  Messages.livesLabel.setText("חיים: " + life);
             if (score == allScore) {
                 Messages.victoryAnnouncement();
             }

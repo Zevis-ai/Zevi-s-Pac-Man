@@ -1,20 +1,27 @@
 package game.Frame;
 
+import game.objects.Player.ImagePacMan;
 import game.objects.coin.Coin;
 import game.objects.coin.CoinArray;
+import game.objects.fruits.Cherry;
 
 import javax.swing.*;
 import java.awt.*;
 
+import static game.objects.coin.CoinArray.bigCoin;
 import static game.objects.coin.CoinArray.coins;
 
 public class Build_a_map {
 
     public static int score;
+    public static int life = 3;
     public static int allScore = 0;
-    public static Coin coin;
+    public static Coin bigCoin;
+    public static ImagePacMan imagePacMan;
 
     public static void buildMap(JPanel mapjpanel){
+        score = 0;
+        allScore = 0;
         CoinArray.initCoins();  // Initialize coins array before building the map
         for (int i = 0; i < D_Map.D_Map1.length; i++) {
             for (int j = 0; j < D_Map.D_Map1[0].length; j++) {
@@ -35,12 +42,12 @@ public class Build_a_map {
 
                 }
                 if (D_Map.D_Map1[i][j] == 2) {
-
                     jPanel1.setBackground(Color.BLACK); // הגדרת רקע שחור
-                    coin = new Coin();
-                    jPanel1.add(coin);
-
+                    bigCoin = new Coin();
+                    jPanel1.add(bigCoin);
+                    coins[i][j] = bigCoin;
                 }
+
                 if (D_Map.D_Map1[i][j] == 3) {
                     jPanel1.setBackground(Color.BLACK);
 
@@ -52,6 +59,23 @@ public class Build_a_map {
 
                 if (D_Map.D_Map1[i][j] == 9) {
                     jPanel1.setBackground(Color.cyan);
+
+                }
+                if (D_Map.D_Map1[i][j] == 9) {
+                    jPanel1.setBackground(Color.cyan);
+
+                }
+                if (D_Map.D_Map1[i][j] == 10) {
+                    jPanel1.setBackground(Color.cyan);
+                    Cherry cherry = new Cherry();
+                    jPanel1.add(cherry);
+
+                }
+                if (D_Map.D_Map1[i][j] == 11) {
+                    jPanel1.setBackground(Color.cyan);
+                    imagePacMan = new ImagePacMan();
+                    imagePacMan.setSize(10,10);
+                    jPanel1.add(imagePacMan);
 
                 }
                 mapjpanel.add(jPanel1);

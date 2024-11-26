@@ -1,54 +1,70 @@
 package game.objects.monsters;
 
+import game.Frame.Build_a_map;
 import game.objects.Player.Direction;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
 public class OrangeGhost extends JPanel {
 
-    private Image image;
-    private Direction orangeGhostDirection;
-    private Timer moveTimer;
-    boolean canStart = false;
-    private static final Point START_POINT = new Point(260,260);
-    private static final Point EXIT_POINT = new Point(260,200);
-    private int speed = 20;
+    public static Image image;
+    public static Direction orangeGhostDirection;
+    public static Timer moveTimer;
+    public static boolean canStart = false;
+    public static final Point START_POINT = new Point(260,260);
+    public static final Point EXIT_POINT = new Point(260,200);
+    public static int speed = 20;
 
-    public void RandomSide(){
+    public void randomSide(){
         orangeGhostDirection = GhostSettings.getRandomDirection();
     }
 
-    private void setupMoveTimer() {
-        moveTimer = new Timer(150, e -> moveGhost());
-        moveTimer.start();
-
-
-        Timer delayTimer = new Timer(5000, e -> {
-            canStart = true;
-            setLocation(EXIT_POINT.x, EXIT_POINT.y);
-            ((Timer)e.getSource()).stop();
+    private static void setupMoveTimer(int delay, JPanel ghost) {
+        if (moveTimer != null) {
+            moveTimer.stop();
+        }
+        moveTimer = new Timer(delay, e -> {
+            if (canStart) {
+                OrangeGhost.moveGhost(ghost);
+            }
         });
-        delayTimer.setRepeats(false);
-        delayTimer.start();
     }
 
-    private void moveGhost() {
-        Direction newDirection = GhostSettings.moveGhost(orangeGhostDirection, canStart, this, speed);
+    public static void moveGhost(JPanel ghost) {
+        Direction newDirection = GhostSettings.moveGhost(orangeGhostDirection, canStart,ghost, speed);
         if (newDirection != null) {
             orangeGhostDirection = newDirection;
         }
     }
 
     public OrangeGhost()  {
-        setBounds(240, 280, 20, 20);
+        setBounds(START_POINT.x, START_POINT.y, 20, 20);
+
+        Timer scoreTimer = new Timer(100, e -> {
+            if (Build_a_map.score > 1160 && !canStart) {
+                Timer delayTimer = new Timer(1000, e2 -> {
+                    canStart = true;
+                    setLocation(EXIT_POINT.x, EXIT_POINT.y);
+                    moveTimer.start();
+                    ((Timer)e2.getSource()).stop();
+                });
+                delayTimer.setRepeats(false);
+                delayTimer.start();
+                ((Timer)e.getSource()).stop();  // Stop checking score after ghost starts moving
+            }
+        });
+
+        scoreTimer.start();
         setOpaque(false);
         loadImage();
-        RandomSide();  
-        setupMoveTimer();
+        randomSide();
+        setupMoveTimer(GhostSettings.delay, this);
     }
 
     public void loadImage() {
-        image  = GhostSettings.loadImage(this);
+        File file = new File("C:\\Users\\JBH\\IdeaProjects\\Zevis-Pac-Man\\src\\game\\img\\orangeGhost.png");
+        image  = GhostSettings.loadImage(this, file);
     }
 
     @Override

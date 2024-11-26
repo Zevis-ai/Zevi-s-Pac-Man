@@ -1,12 +1,14 @@
 package game.Frame;
 
+import game.objects.Player.ImagePacMan;
 import game.objects.Player.PacManPlayer;
 import game.messages.Messages;
 import javax.swing.*;
 import java.awt.*;
 
+import game.objects.fruits.Cherry;
 import game.objects.monsters.Blue_Ghost;
-import game.objects.monsters.Orange_Ghost;
+import game.objects.monsters.OrangeGhost;
 import game.objects.monsters.Pink_Ghost;
 import game.objects.monsters.Red_Ghost;
 
@@ -14,9 +16,11 @@ public class MyJLayeredPane extends JLayeredPane {
     private MyJPanel mapPanel;
     private PacManPlayer player;
     private Blue_Ghost blue_ghost;
-    private Orange_Ghost orange_ghost;
+    private OrangeGhost orange_ghost;
     private Pink_Ghost pink_ghost;
     private Red_Ghost red_ghost;
+    private Cherry cherry;
+    private ImagePacMan imagePacMan;
 
     public static game.sound.Sound sound = new game.sound.Sound();
 
@@ -32,9 +36,11 @@ public class MyJLayeredPane extends JLayeredPane {
         player = new PacManPlayer();
         // מכשפות
         blue_ghost = new Blue_Ghost();
-        orange_ghost = new Orange_Ghost();
+        orange_ghost = new OrangeGhost();
         pink_ghost = new Pink_Ghost();
         red_ghost = new Red_Ghost();
+        cherry = new Cherry();
+        imagePacMan = new ImagePacMan();
         
         // הוספת השכבות
         add(mapPanel, Integer.valueOf(1));    // שכבת המפה
@@ -44,6 +50,9 @@ public class MyJLayeredPane extends JLayeredPane {
         add(orange_ghost, Integer.valueOf(4));
         add(pink_ghost, Integer.valueOf(4));
         add(red_ghost, Integer.valueOf(4));
+
+        add(cherry,Integer.valueOf(5));
+        add(imagePacMan,Integer.valueOf(6));
 
         
         // הוספת תצוגת ניקוד וחיים
@@ -60,6 +69,7 @@ public class MyJLayeredPane extends JLayeredPane {
         orange_ghost.setVisible(true);
         pink_ghost.setVisible(true);
         red_ghost.setVisible(true);
+        imagePacMan.setVisible(true);
 
 //        // Set player reference for ghosts
 //        blue_ghost.setPlayer(player);

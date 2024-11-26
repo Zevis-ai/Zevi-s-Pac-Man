@@ -1,28 +1,34 @@
 package game.key;
 
 import game.Frame.D_Map;
+import game.Frame.MyJLayeredPane;
+import game.messages.Messages;
 import game.objects.Player.Direction;
 import game.objects.Player.PacManPlayer;
 import game.objects.coin.CoinArray;
+import game.objects.monsters.Blue_Ghost;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.*;
 
+import static game.Frame.Build_a_map.life;
+import static game.Frame.Build_a_map.score;
 import static game.messages.Messages.ScoreAnnouncement;
 
 public class MyKeyListener implements KeyListener {
-    private final PacManPlayer player;
-    private Timer moveTimer;
-    private static final int MOVE_SPEED = 20;  // מהירות תנועה - תואמת לגודל התא
+    public static PacManPlayer player;
+    public static Timer moveTimer;
+    public static int MOVE_SPEED = 20;  // מהירות תנועה - תואמת לגודל התא
+    public static int delay = 200;
 
     public MyKeyListener(PacManPlayer player) {
         this.player = player;
-        setupMoveTimer();
+        setupMoveTimer(delay);
     }
 
-    private void setupMoveTimer() {
-        moveTimer = new Timer(200, e -> {
+    public static void setupMoveTimer(int delay) {
+        moveTimer = new Timer(delay, e -> {
             if (player.getDirection() != null) {
                 movePlayer();
             }
@@ -62,7 +68,7 @@ public class MyKeyListener implements KeyListener {
         }
     }
 
-    private void movePlayer() {
+    public static void movePlayer() {
         int currentX = player.getX();
         int currentY = player.getY();
         int newX = currentX;
@@ -83,12 +89,18 @@ public class MyKeyListener implements KeyListener {
                 break;
         }
 
-        // המרת קואורדינטות המסך לקואורדינטות המפה
+
         int mapX = newX / D_Map.CELL_SIZE;
         int mapY = newY / D_Map.CELL_SIZE;
+        System.out.println("x = " + newX + " , y = " + newY);
 //        ScoreAnnouncement(mapX, mapY);
 
         cenMove(mapX, mapY, player, newX, newY);
+
+        Messages.livesLabel.setText("חיים: " + life);
+        if (life < 0){
+            Messages.gameOver(score);
+        }
 //        // בדיקת גבולות המפה והתנגשות עם קירות
 //        if (mapX >= 0 && mapX < D_Map.D_Map1[0].length &&
 //            mapY >= 0 && mapY < D_Map.D_Map1.length &&
@@ -117,7 +129,7 @@ public class MyKeyListener implements KeyListener {
 
     // הגדרת מערה
 
-    private void cave(int newX, int newY){
+    public static void cave(int newX, int newY){
         if (newX == 520 && newY == 280) {
             player.setLocation(0, 280);
         }
