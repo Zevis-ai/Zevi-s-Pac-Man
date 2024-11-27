@@ -73,6 +73,7 @@ public class MyJLayeredPane extends JLayeredPane {
         strawberry.setBounds(100,640,20,20);
 
 
+
         // הוספת השכבות
         add(mapPanel, Integer.valueOf(1));    // שכבת המפה
         add(player, Integer.valueOf(2));
@@ -114,6 +115,7 @@ public class MyJLayeredPane extends JLayeredPane {
         persiaCherry.setVisible(false);
         apple.setVisible(true);
         strawberry.setVisible(true);
+
 
         cherryTimer = new Timer(15000, new ActionListener() {
             @Override
