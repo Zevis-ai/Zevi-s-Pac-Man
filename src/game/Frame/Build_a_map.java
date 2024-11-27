@@ -17,7 +17,7 @@ public class Build_a_map {
     public static int life = 3;
     public static int allScore = 0;
     public static Coin bigCoin;
-    public static ImagePacMan imagePacMan;
+
 
     public static void buildMap(JPanel mapjpanel){
         score = 0;
@@ -66,16 +66,8 @@ public class Build_a_map {
 
                 }
                 if (D_Map.D_Map1[i][j] == 10) {
-                    jPanel1.setBackground(Color.cyan);
                     Cherry cherry = new Cherry();
                     jPanel1.add(cherry);
-
-                }
-                if (D_Map.D_Map1[i][j] == 11) {
-                    jPanel1.setBackground(Color.cyan);
-                    imagePacMan = new ImagePacMan();
-                    imagePacMan.setSize(10,10);
-                    jPanel1.add(imagePacMan);
 
                 }
                 mapjpanel.add(jPanel1);

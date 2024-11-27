@@ -2,6 +2,7 @@ package game.objects.monsters;
 
 import game.Frame.Build_a_map;
 import game.Frame.D_Map;
+import game.Frame.MyJLayeredPane;
 import game.key.MyKeyListener;
 import game.messages.Messages;
 import game.objects.Player.Direction;
@@ -103,10 +104,11 @@ public class GhostSettings {
 
     public static void death(JPanel player){
         if (MyKeyListener.player != null){
+            // abc שומר על מספר חיובי
             int x = Math.abs(player.getX() - MyKeyListener.player.getX());
             int y = Math.abs(player.getY() - MyKeyListener.player.getY());
 
-            if (x < 20 && y < 20){
+            if (x < 25 && y < 25){
 //                player.setLocation(Blue_Ghost.START);
 
                 if (player instanceof Blue_Ghost){
@@ -122,6 +124,8 @@ public class GhostSettings {
                     System.out.println("PINK");
                 }
                 life--;
+                // עדכון תמונות החיים
+                MyJLayeredPane.getInstance().updateLifeImages();
 
                 try {
                     Thread.sleep(3000);

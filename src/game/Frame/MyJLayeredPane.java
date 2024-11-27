@@ -6,13 +6,16 @@ import game.messages.Messages;
 import javax.swing.*;
 import java.awt.*;
 
-import game.objects.fruits.Cherry;
+import game.objects.fruits.*;
 import game.objects.monsters.Blue_Ghost;
 import game.objects.monsters.OrangeGhost;
 import game.objects.monsters.Pink_Ghost;
 import game.objects.monsters.Red_Ghost;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MyJLayeredPane extends JLayeredPane {
+    private static MyJLayeredPane instance;
     private MyJPanel mapPanel;
     private PacManPlayer player;
     private Blue_Ghost blue_ghost;
@@ -20,11 +23,19 @@ public class MyJLayeredPane extends JLayeredPane {
     private Pink_Ghost pink_ghost;
     private Red_Ghost red_ghost;
     private Cherry cherry;
-    private ImagePacMan imagePacMan;
+    public static Cherry persiaCherry;
+    public static Apple apple;
+    public static Orange orange;
+    public static Strawberry strawberry;
+    private ImagePacMan imagePacMan1;
+    private ImagePacMan imagePacMan2;
+    private ImagePacMan imagePacMan3;
+    Timer cherryTimer;
 
     public static game.sound.Sound sound = new game.sound.Sound();
 
     public MyJLayeredPane(){
+        instance = this;  // שמירת ההפניה למופע הנוכחי
         setLayout(null);  // חשוב! כדי שה-bounds יעבדו
         setPreferredSize(new Dimension(D_Map.MAP_WIDTH_SIZE, D_Map.MAP_HEIGHT_SIZE));
         
@@ -40,8 +51,28 @@ public class MyJLayeredPane extends JLayeredPane {
         pink_ghost = new Pink_Ghost();
         red_ghost = new Red_Ghost();
         cherry = new Cherry();
-        imagePacMan = new ImagePacMan();
+        persiaCherry = new Cherry();
+        apple = new Apple();
+        orange = new Orange();
+        strawberry = new Strawberry();
         
+        // יצירת תמונות חיים
+        imagePacMan1 = new ImagePacMan();
+        imagePacMan2 = new ImagePacMan();
+        imagePacMan3 = new ImagePacMan();
+
+        // הגדרת מיקום לתמונות החיים
+        imagePacMan1.setBounds(40, 620, 20, 20);
+        imagePacMan2.setBounds(70, 620, 20, 20);
+        imagePacMan3.setBounds(100, 620, 20, 20);
+
+        persiaCherry.setBounds(260, 340, 20, 20);
+        apple.setBounds(60, 640, 20, 20);
+        cherry.setBounds(40,640,35,35);
+        orange.setBounds(80,640,20,20);
+        strawberry.setBounds(100,640,20,20);
+
+
         // הוספת השכבות
         add(mapPanel, Integer.valueOf(1));    // שכבת המפה
         add(player, Integer.valueOf(2));
@@ -52,7 +83,14 @@ public class MyJLayeredPane extends JLayeredPane {
         add(red_ghost, Integer.valueOf(4));
 
         add(cherry,Integer.valueOf(5));
-        add(imagePacMan,Integer.valueOf(6));
+        add(persiaCherry,Integer.valueOf(5));
+        add(apple,Integer.valueOf(5));
+        add(orange, Integer.valueOf(5));
+        add(strawberry, Integer.valueOf(5));
+
+        add(imagePacMan1,Integer.valueOf(6));
+        add(imagePacMan2,Integer.valueOf(6));
+        add(imagePacMan3,Integer.valueOf(6));
 
         
         // הוספת תצוגת ניקוד וחיים
@@ -69,7 +107,25 @@ public class MyJLayeredPane extends JLayeredPane {
         orange_ghost.setVisible(true);
         pink_ghost.setVisible(true);
         red_ghost.setVisible(true);
-        imagePacMan.setVisible(true);
+
+        updateLifeImages();
+
+        cherry.setVisible(true);
+        persiaCherry.setVisible(false);
+        apple.setVisible(true);
+        strawberry.setVisible(true);
+
+        cherryTimer = new Timer(15000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                persiaCherry.setVisible(true);
+                cherry.setVisible(false);
+                ((Timer)e.getSource()).stop();
+            }
+        });
+
+        cherryTimer.setRepeats(false);
+        cherryTimer.start();
 
 //        // Set player reference for ghosts
 //        blue_ghost.setPlayer(player);
@@ -95,5 +151,35 @@ public class MyJLayeredPane extends JLayeredPane {
     public static void playSE(int i){
         sound.setFile(i);
         sound.play();
+    }
+    
+    public void updateLifeImages() {
+        // עדכון נראות תמונות החיים בהתאם למספר החיים הנוכחי
+        switch (Build_a_map.life) {
+            case 3:
+                imagePacMan1.setVisible(true);
+                imagePacMan2.setVisible(true);
+                imagePacMan3.setVisible(true);
+                break;
+            case 2:
+                imagePacMan1.setVisible(true);
+                imagePacMan2.setVisible(true);
+                imagePacMan3.setVisible(false);
+                break;
+            case 1:
+                imagePacMan1.setVisible(true);
+                imagePacMan2.setVisible(false);
+                imagePacMan3.setVisible(false);
+                break;
+            default:
+                imagePacMan1.setVisible(false);
+                imagePacMan2.setVisible(false);
+                imagePacMan3.setVisible(false);
+                break;
+        }
+    }
+    // סינגלטון
+    public static MyJLayeredPane getInstance() {
+        return instance;
     }
 }

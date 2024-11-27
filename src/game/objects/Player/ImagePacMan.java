@@ -3,18 +3,23 @@ package game.objects.Player;
 import javax.swing.*;
 import java.awt.*;
 
+
 public class ImagePacMan extends JPanel {
     private ImageIcon gifIcon;
 
     public ImagePacMan(){
-        setBounds(0, 0, 10, 10);
         setOpaque(false);
+        setPreferredSize(new Dimension(20, 20));  // קביעת גודל קבוע
         loadGif();
 
     }
 
     public void loadGif() {
-        gifIcon = new ImageIcon("C:\\Users\\JBH\\IdeaProjects\\Zevis-Pac-Man\\src\\game\\img\\left.gif");
+        gifIcon = new ImageIcon("C:\\Users\\JBH\\IdeaProjects\\Zevis-Pac-Man\\src\\game\\img\\pacmanleft.jpg");
+        // התאמת גודל התמונה
+        Image img = gifIcon.getImage();
+        Image newimg = img.getScaledInstance(20, 20, Image.SCALE_SMOOTH);
+        gifIcon = new ImageIcon(newimg);
     }
 
     @Override

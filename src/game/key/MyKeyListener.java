@@ -6,6 +6,7 @@ import game.messages.Messages;
 import game.objects.Player.Direction;
 import game.objects.Player.PacManPlayer;
 import game.objects.coin.CoinArray;
+import game.objects.fruits.EatFruitPrizes;
 import game.objects.monsters.Blue_Ghost;
 
 import java.awt.event.KeyEvent;
@@ -101,15 +102,12 @@ public class MyKeyListener implements KeyListener {
         if (life < 0){
             Messages.gameOver(score);
         }
-//        // בדיקת גבולות המפה והתנגשות עם קירות
-//        if (mapX >= 0 && mapX < D_Map.D_Map1[0].length &&
-//            mapY >= 0 && mapY < D_Map.D_Map1.length &&
-//            D_Map.D_Map1[mapY][mapX] != 1) {
-//
-//            player.move(newX, newY);
-//            // קריאה להסרת מטבע במיקום החדש
-//            CoinArray.removeCoin(mapX, mapY);
-//        }
+        // עדכון תמונות החיים
+        MyJLayeredPane.getInstance().updateLifeImages();
+        
+        // בדיקה אם השחקן אכל פרי
+        EatFruitPrizes.removeFruit();
+
         cave(newX,newY);
     }
 

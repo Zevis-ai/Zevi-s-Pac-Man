@@ -39,10 +39,10 @@ public class OrangeGhost extends JPanel {
     }
 
     public OrangeGhost()  {
-        setBounds(START_POINT.x, START_POINT.y, 20, 20);
+        setBounds(240, 280, 20, 20);
 
         Timer scoreTimer = new Timer(100, e -> {
-            if (Build_a_map.score > 1160 && !canStart) {
+            if (Build_a_map.score > 580 && !canStart) {
                 Timer delayTimer = new Timer(1000, e2 -> {
                     canStart = true;
                     setLocation(EXIT_POINT.x, EXIT_POINT.y);

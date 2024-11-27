@@ -28,6 +28,10 @@ public class CoinArray {
             if (coins[mapY][mapX] instanceof Coin){
                 System.out.println("אכלת מטבע גדול");
                 GhostSettings.delay = 500;
+                Build_a_map.score += 200;
+                // עדכון תצוגת הניקוד
+                Messages.scoreLabel.setText("ניקוד: " + Build_a_map.score);
+                MyJLayeredPane.playSE(1);  // השמעת צליל אכילת פרי
             }
             // סאונד אכילת מטבע
             MyJLayeredPane.playSE(2);
