@@ -110,15 +110,17 @@ public class GhostSettings {
 
             if (x < 25 && y < 25){
 //                player.setLocation(Blue_Ghost.START);
-
                 if (player instanceof Blue_Ghost){
                     System.out.println("blue");
+
                 }
                 if (player instanceof OrangeGhost){
                     System.out.println("orange");
                 }
                 if (player instanceof Red_Ghost){
-                    System.out.println("RED");
+                    System.out.println("RED Ghost died - Resetting position");
+                    MyJLayeredPane.setLoc(player, 180, 200);
+                    System.out.println("New position should be: 260, 260");
                 }
                 if (player instanceof Pink_Ghost){
                     System.out.println("PINK");
@@ -136,5 +138,4 @@ public class GhostSettings {
             }
         }
     }
-
 }

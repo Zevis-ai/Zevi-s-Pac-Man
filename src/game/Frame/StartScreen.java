@@ -1,10 +1,13 @@
 package game.Frame;
 
+import game.data.HighScores;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.List;
 
 public class StartScreen{
 
@@ -86,6 +89,8 @@ public class StartScreen{
 
        welcomeFrame.add(buttonPanel, BorderLayout.SOUTH);
 
+       highScoresButton.addActionListener(e -> showHighScores(welcomeFrame));
+
        // הוספת מאזין ללחצן ההתחלה
        startButton.addActionListener(e -> {
            //קבלת השם
@@ -105,6 +110,39 @@ public class StartScreen{
        welcomeFrame.setLocationRelativeTo(null);
        welcomeFrame.setVisible(true);
    }
+
+    private static void showHighScores(JFrame welcomeFrame) {
+       JDialog dialog = new JDialog(welcomeFrame, "טבלת שיאים", true);
+       dialog.setLayout(new BorderLayout());
+       dialog.setSize(400,500);
+       dialog.setLocationRelativeTo(welcomeFrame);
+
+       JPanel scoresPanel = new JPanel();
+       scoresPanel.setLayout(new BoxLayout(scoresPanel,BoxLayout.Y_AXIS));
+       scoresPanel.setBackground(new Color(246,4,255));
+
+       JLabel titleLabel = new JLabel("טבלת שיאים");
+       titleLabel.setFont(new Font("Courier New",Font.BOLD,24));
+       titleLabel.setForeground(Color.yellow);
+       titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+       scoresPanel.add(titleLabel);
+       scoresPanel.add(Box.createVerticalStrut(20));
+
+       List<String> scores = HighScores.readScores();
+       for (String score : scores) {
+           String[] parts = score.split(",");
+           JLabel scoreLabel = new JLabel(parts[0] + ": " + parts[1]);
+           scoreLabel.setFont(new Font("Courier New", Font.PLAIN, 18));
+           scoreLabel.setForeground(Color.WHITE);
+           scoreLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+           scoresPanel.add(scoreLabel);
+           scoresPanel.add(Box.createVerticalStrut(10));
+       }
+
+       dialog.add(scoresPanel, BorderLayout.CENTER);
+       dialog.setVisible(true);
+    }
 
     public static String getUserName() {
         return userName;

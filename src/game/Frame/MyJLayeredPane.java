@@ -15,13 +15,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MyJLayeredPane extends JLayeredPane {
-    private static MyJLayeredPane instance;
-    private MyJPanel mapPanel;
+    public static MyJLayeredPane instance;
+    public static MyJPanel mapPanel;
     private PacManPlayer player;
     private Blue_Ghost blue_ghost;
     private OrangeGhost orange_ghost;
     private Pink_Ghost pink_ghost;
-    private Red_Ghost red_ghost;
+    public static Red_Ghost red_ghost;  //
     private Cherry cherry;
     public static Cherry persiaCherry;
     public static Apple apple;
@@ -35,7 +35,7 @@ public class MyJLayeredPane extends JLayeredPane {
     public static game.sound.Sound sound = new game.sound.Sound();
 
     public MyJLayeredPane(){
-        instance = this;  // שמירת ההפניה למופע הנוכחי
+        instance = this;
         setLayout(null);  // חשוב! כדי שה-bounds יעבדו
         setPreferredSize(new Dimension(D_Map.MAP_WIDTH_SIZE, D_Map.MAP_HEIGHT_SIZE));
         
@@ -49,7 +49,7 @@ public class MyJLayeredPane extends JLayeredPane {
         blue_ghost = new Blue_Ghost();
         orange_ghost = new OrangeGhost();
         pink_ghost = new Pink_Ghost();
-        red_ghost = new Red_Ghost();
+        red_ghost = new Red_Ghost();  // יצירת הרוח האדומה
         cherry = new Cherry();
         persiaCherry = new Cherry();
         apple = new Apple();
@@ -165,14 +165,14 @@ public class MyJLayeredPane extends JLayeredPane {
                 imagePacMan3.setVisible(true);
                 break;
             case 2:
-                imagePacMan1.setVisible(true);
+                imagePacMan1.setVisible(false);
                 imagePacMan2.setVisible(true);
-                imagePacMan3.setVisible(false);
+                imagePacMan3.setVisible(true);
                 break;
             case 1:
-                imagePacMan1.setVisible(true);
+                imagePacMan1.setVisible(false);
                 imagePacMan2.setVisible(false);
-                imagePacMan3.setVisible(false);
+                imagePacMan3.setVisible(true);
                 break;
             default:
                 imagePacMan1.setVisible(false);
@@ -181,8 +181,21 @@ public class MyJLayeredPane extends JLayeredPane {
                 break;
         }
     }
+
     // סינגלטון
     public static MyJLayeredPane getInstance() {
         return instance;
+    }
+
+    public static void setLoc(JPanel ghost, int x, int y) {
+        SwingUtilities.invokeLater(() -> {
+            ghost.setLocation(x, y);
+            ghost.revalidate();
+            ghost.repaint();
+            if (instance != null) {
+                instance.revalidate();
+                instance.repaint();
+            }
+        });
     }
 }

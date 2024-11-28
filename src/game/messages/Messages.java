@@ -1,8 +1,12 @@
 package game.messages;
 
+
+import game.Frame.MyJLayeredPane;
+import game.Frame.StartScreen;
+import game.data.HighScores;
+
 import javax.swing.*;
 import java.awt.*;
-
 import static game.Frame.Build_a_map.*;
 import static game.objects.coin.CoinArray.coins;
 
@@ -10,6 +14,7 @@ public class Messages {
     public static JLabel scoreLabel;
     public static JLabel livesLabel; //  חיים
     public static JLabel nameLabel; //  חיים
+    public static MyJLayeredPane frame; // Added static frame reference
 
     static {
         scoreLabel = new JLabel("ניקוד: 0");
@@ -29,8 +34,6 @@ public class Messages {
         nameLabel.setForeground(Color.black);
         nameLabel.setBounds(10, 50, 200, 30);
         nameLabel.setLocation(250, 625);
-
-
     }
 
     public static void victoryAnnouncement() {
@@ -39,11 +42,16 @@ public class Messages {
     }
 
     public static void gameOver(int score) {
-        JOptionPane.showMessageDialog(null, " 💀💀  💀💀  💀💀  💀💀 " + "הניקוד שלך הוא " + score); //+ Game.score
-        System.exit(0); // מפסיק משחק
+        // שמירת הניקוד לפני הצגת ההודעה
+        HighScores.saveScores(StartScreen.getUserName(), score);
+        JOptionPane.showMessageDialog(null, StartScreen.getUserName() + " 💀💀 " + "הניקוד שלך הוא " + score);
+//        StartScreen.createWelcomeFrame();
+        System.exit(0);
+
+
     }
 
- // הודעת ציון
+    // הודעת ציון
     public static void ScoreAnnouncement(int mapX, int mapY){
         if (coins[mapY][mapX] != null) {
             coins[mapY][mapX].setVisible(false);

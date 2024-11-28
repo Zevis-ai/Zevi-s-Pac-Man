@@ -11,6 +11,7 @@ public class PacManPlayer extends JPanel {
     public static int life = 3;
     private int gifWidth = 20;  // רוחב מותאם
     private int gifHeight = 20; // גובה מותאם
+    private Timer timer; // added timer variable
 
     public PacManPlayer(){
         setBounds(260, 460, 20, 20);
@@ -57,5 +58,12 @@ public class PacManPlayer extends JPanel {
 
     public void move(int newX, int newY) {
         setBounds(newX, newY, getWidth(), getHeight());
+    }
+
+    public void stopMovement() {
+        // עוצרים את כל התנועה של השחקן
+        if (timer != null) {
+            timer.stop();
+        }
     }
 }
