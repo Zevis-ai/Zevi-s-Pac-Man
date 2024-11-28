@@ -69,4 +69,6 @@ public class Red_Ghost extends JPanel implements Ghost {
             g.fillOval(0, 0, getWidth(), getHeight());
         }
     }
+
+
 }

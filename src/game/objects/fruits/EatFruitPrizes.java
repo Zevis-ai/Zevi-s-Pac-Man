@@ -21,13 +21,13 @@ public class EatFruitPrizes {
         }
 
         // בדיקת התנגשות עם התפוח
-        if (MyJLayeredPane.apple.isVisible()) {
-            int x = Math.abs(MyKeyListener.player.getX() - MyJLayeredPane.apple.getX());
-            int y = Math.abs(MyKeyListener.player.getY() - MyJLayeredPane.apple.getY());
+        if (MyJLayeredPane.persiaApple.isVisible()) {  // בודקים אם התפוח הגדול נראה
+            int x = Math.abs(MyKeyListener.player.getX() - MyJLayeredPane.persiaApple.getX());
+            int y = Math.abs(MyKeyListener.player.getY() - MyJLayeredPane.persiaApple.getY());
 
             if (x < 20 && y < 20) {
-                MyJLayeredPane.apple.setVisible(false);
-                Build_a_map.score += 100;  // התפוח שווה 100 נקודות
+                MyJLayeredPane.persiaApple.setVisible(false);
+                Build_a_map.score += 700;
                 Messages.scoreLabel.setText("ניקוד: " + Build_a_map.score);
                 MyJLayeredPane.playSE(1);
             }

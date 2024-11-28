@@ -25,12 +25,14 @@ public class MyJLayeredPane extends JLayeredPane {
     private Cherry cherry;
     public static Cherry persiaCherry;
     public static Apple apple;
+    public static Apple persiaApple;
     public static Orange orange;
     public static Strawberry strawberry;
     private ImagePacMan imagePacMan1;
     private ImagePacMan imagePacMan2;
     private ImagePacMan imagePacMan3;
     Timer cherryTimer;
+    Timer appleTimer;
 
     public static game.sound.Sound sound = new game.sound.Sound();
 
@@ -53,6 +55,7 @@ public class MyJLayeredPane extends JLayeredPane {
         cherry = new Cherry();
         persiaCherry = new Cherry();
         apple = new Apple();
+        persiaApple = new Apple();
         orange = new Orange();
         strawberry = new Strawberry();
         
@@ -68,6 +71,7 @@ public class MyJLayeredPane extends JLayeredPane {
 
         persiaCherry.setBounds(260, 340, 20, 20);
         apple.setBounds(60, 640, 20, 20);
+        persiaApple.setBounds(260, 340, 20, 20);
         cherry.setBounds(40,640,35,35);
         orange.setBounds(80,640,20,20);
         strawberry.setBounds(100,640,20,20);
@@ -86,6 +90,7 @@ public class MyJLayeredPane extends JLayeredPane {
         add(cherry,Integer.valueOf(5));
         add(persiaCherry,Integer.valueOf(5));
         add(apple,Integer.valueOf(5));
+        add(persiaApple,Integer.valueOf(5));
         add(orange, Integer.valueOf(5));
         add(strawberry, Integer.valueOf(5));
 
@@ -115,6 +120,7 @@ public class MyJLayeredPane extends JLayeredPane {
         cherry.setVisible(true);
         persiaCherry.setVisible(false);
         apple.setVisible(true);
+        persiaApple.setVisible(false);
         strawberry.setVisible(true);
 
 
@@ -127,8 +133,19 @@ public class MyJLayeredPane extends JLayeredPane {
             }
         });
 
+        appleTimer = new Timer(25000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                persiaApple.setVisible(true);
+                apple.setVisible(false);
+                ((Timer)e.getSource()).stop();
+            }
+        });
+
         cherryTimer.setRepeats(false);
         cherryTimer.start();
+        appleTimer.setRepeats(false);  // רק פעם אחת
+        appleTimer.start();  // מפעילים את הטיימר
 
 //        // Set player reference for ghosts
 //        blue_ghost.setPlayer(player);

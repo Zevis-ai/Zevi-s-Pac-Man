@@ -94,7 +94,7 @@ public class MyKeyListener implements KeyListener {
 
         int mapX = newX / D_Map.CELL_SIZE;
         int mapY = newY / D_Map.CELL_SIZE;
-        System.out.println("x = " + newX + " , y = " + newY);
+//        System.out.println("x = " + newX + " , y = " + newY);
 //        ScoreAnnouncement(mapX, mapY);
 
         cenMove(mapX, mapY, player, newX, newY);
