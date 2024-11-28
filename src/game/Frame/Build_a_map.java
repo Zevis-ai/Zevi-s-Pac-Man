@@ -13,12 +13,14 @@ import static game.objects.coin.CoinArray.coins;
 
 public class Build_a_map {
 
+
     public static int score;
     public static int life = 3;
     public static int allScore = 0;
     public static Coin bigCoin;
+    public static  int countEatingCoins = 0;
 
-
+// בונה את המפה לפי המספרים במערך על ידי לולאה בתוך לולאה
     public static void buildMap(JPanel mapjpanel){
         score = 0;
         allScore = 0;
@@ -46,6 +48,7 @@ public class Build_a_map {
                     bigCoin = new Coin();
                     jPanel1.add(bigCoin);
                     coins[i][j] = bigCoin;
+                    allScore++;
                 }
 
                 if (D_Map.D_Map1[i][j] == 3) {

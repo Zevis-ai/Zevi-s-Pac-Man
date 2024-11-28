@@ -101,6 +101,7 @@ public class MyKeyListener implements KeyListener {
 
         Messages.livesLabel.setText("חיים: " + life);
         Messages.nameLabel.setText("שם: " + StartScreen.getUserName());
+
         if (life < 0){
             Messages.gameOver(score);
         }

@@ -1,14 +1,16 @@
 package game.objects.monsters;
 
+import game.Frame.MyJLayeredPane;
 import game.objects.Player.Direction;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 
 public class Red_Ghost extends JPanel implements Ghost {
 
-    private Image image;
+    public static Image image1;
     private Direction redGhostDirection;
     private Timer moveTimer;
     private boolean canStart = false;
@@ -50,10 +52,10 @@ public class Red_Ghost extends JPanel implements Ghost {
     @Override
     public void loadImage() {
         try {
-            image = ImageIO.read(getClass().getResource("/game/img/redGhost.png"));
+            image1 = ImageIO.read(getClass().getResource("/game/img/redGhost.png"));
         } catch (IOException e) {
-            // אם התמונה לא נמצאה, נצייר צורה פשוטה במקום
-            System.err.println("Could not load ghost image: " + e.getMessage());
+
+            System.err.println("שגיאה בטעינת התמונה של הרוח האדומה");
             setOpaque(true);
             setBackground(Color.BLUE);
         }
@@ -62,13 +64,15 @@ public class Red_Ghost extends JPanel implements Ghost {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (image != null) {
-            g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+        if (image1 != null) {
+            g.drawImage(image1, 0, 0, getWidth(), getHeight(), this);
         } else {
             g.setColor(Color.BLUE);
             g.fillOval(0, 0, getWidth(), getHeight());
         }
     }
 
-
+    public static void setImage(Image image) {
+        image1 = image;
+    }
 }

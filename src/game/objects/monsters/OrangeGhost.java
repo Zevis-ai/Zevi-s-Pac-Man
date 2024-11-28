@@ -42,7 +42,7 @@ public class OrangeGhost extends JPanel {
         setBounds(260, 260, 20, 20);
 
         Timer scoreTimer = new Timer(100, e -> {
-            if (Build_a_map.score > 580 && !canStart) {
+            if (Build_a_map.countEatingCoins > 118 && !canStart) {
                 Timer delayTimer = new Timer(1000, e2 -> {
                     canStart = true;
                     setLocation(EXIT_POINT.x, EXIT_POINT.y);
@@ -76,5 +76,9 @@ public class OrangeGhost extends JPanel {
             g.setColor(Color.BLUE);
             g.fillOval(0, 0, getWidth(), getHeight());
         }
+    }
+
+    public static void setImage(Image image) {
+        OrangeGhost.image = image;
     }
 }

@@ -21,7 +21,7 @@ public class Pink_Ghost extends JPanel {
         setBounds(START_POINT.x, START_POINT.y, 20, 20);
 
         Timer scoreTimer = new Timer(100, e -> {
-            if (Build_a_map.score > 1740 && !canStart) {
+            if (Build_a_map.countEatingCoins > 177 && !canStart) {
                 Timer delayTimer = new Timer(1000, e2 -> {
                     canStart = true;
                     setLocation(EXIT_POINT.x, EXIT_POINT.y);
@@ -77,5 +77,9 @@ public class Pink_Ghost extends JPanel {
             g.setColor(Color.BLUE);
             g.fillOval(0, 0, getWidth(), getHeight());
         }
+    }
+
+    public static void setImage(Image image) {
+        Pink_Ghost.image = image;
     }
 }

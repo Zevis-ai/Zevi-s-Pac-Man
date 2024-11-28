@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class Blue_Ghost extends JPanel implements Ghost {
 
-    public static Image image;
+    public static Image image1;
     public static Direction blouGhostDirection;
     public static Timer moveTimer;
     public static boolean canStart = false;
@@ -50,7 +50,7 @@ public class Blue_Ghost extends JPanel implements Ghost {
         setBounds(240, 280, 20, 20);
 
         Timer scoreTimer = new Timer(100, e -> {
-            if (Build_a_map.score > 580 && !canStart) {
+            if (Build_a_map.countEatingCoins > 59 && !canStart) {
                 Timer delayTimer = new Timer(1000, e2 -> {
                     canStart = true;
                     setLocation(EXIT_POINT.x, EXIT_POINT.y);
@@ -74,7 +74,7 @@ public class Blue_Ghost extends JPanel implements Ghost {
     @Override
     public void loadImage() {
         try {
-            image = ImageIO.read(getClass().getResource("/game/img/blueGhost.png"));
+            image1 = ImageIO.read(getClass().getResource("/game/img/blueGhost.png"));
         } catch (IOException e) {
             // אם התמונה לא נמצאה, נצייר צורה פשוטה במקום
             System.err.println("Could not load ghost image: " + e.getMessage());
@@ -86,11 +86,15 @@ public class Blue_Ghost extends JPanel implements Ghost {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (image != null) {
-            g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+        if (image1 != null) {
+            g.drawImage(image1, 0, 0, getWidth(), getHeight(), this);
         } else {
             g.setColor(Color.BLUE);
             g.fillOval(0, 0, getWidth(), getHeight());
         }
+    }
+
+    public static void setImage(Image image) {
+        image1 = image;
     }
 }

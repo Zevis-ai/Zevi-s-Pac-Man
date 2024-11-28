@@ -51,7 +51,7 @@ public class MyJLayeredPane extends JLayeredPane {
         blue_ghost = new Blue_Ghost();
         orange_ghost = new OrangeGhost();
         pink_ghost = new Pink_Ghost();
-        red_ghost = new Red_Ghost();  // יצירת הרוח האדומה
+        red_ghost = new Red_Ghost();
         cherry = new Cherry();
         persiaCherry = new Cherry();
         apple = new Apple();

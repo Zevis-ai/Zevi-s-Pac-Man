@@ -1,6 +1,7 @@
 package game.messages;
 
 
+import game.Frame.Build_a_map;
 import game.Frame.MyJLayeredPane;
 import game.Frame.StartScreen;
 import game.data.HighScores;
@@ -11,10 +12,10 @@ import static game.Frame.Build_a_map.*;
 import static game.objects.coin.CoinArray.coins;
 
 public class Messages {
-    public static JLabel scoreLabel;
+    public static JLabel scoreLabel;// ניקוד
     public static JLabel livesLabel; //  חיים
-    public static JLabel nameLabel; //  חיים
-    public static MyJLayeredPane frame; // Added static frame reference
+    public static JLabel nameLabel; //  שם
+    public static MyJLayeredPane frame;
 
     static {
         scoreLabel = new JLabel("ניקוד: 0");
@@ -36,11 +37,14 @@ public class Messages {
         nameLabel.setLocation(250, 625);
     }
 
+    // הודעת ניצחון
     public static void victoryAnnouncement() {
-        JOptionPane.showMessageDialog(null, "מזל טוב! הניקוד הסופי שלך: "); //+ Game.score
+        JOptionPane.showMessageDialog(null, " מזל טוב  " + StartScreen.getUserName() + "! הניקוד הסופי שלך הוא:  " + score);
+        HighScores.saveScores(StartScreen.getUserName(), score);
         System.exit(0); // מפסיק משחק
     }
 
+    // הודעת אבוד
     public static void gameOver(int score) {
         // שמירת הניקוד לפני הצגת ההודעה
         HighScores.saveScores(StartScreen.getUserName(), score);
