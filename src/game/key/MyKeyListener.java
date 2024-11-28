@@ -2,6 +2,7 @@ package game.key;
 
 import game.Frame.D_Map;
 import game.Frame.MyJLayeredPane;
+import game.Frame.StartScreen;
 import game.messages.Messages;
 import game.objects.Player.Direction;
 import game.objects.Player.PacManPlayer;
@@ -99,6 +100,7 @@ public class MyKeyListener implements KeyListener {
         cenMove(mapX, mapY, player, newX, newY);
 
         Messages.livesLabel.setText("חיים: " + life);
+        Messages.nameLabel.setText("שם: " + StartScreen.getUserName());
         if (life < 0){
             Messages.gameOver(score);
         }

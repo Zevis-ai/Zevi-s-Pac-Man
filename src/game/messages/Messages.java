@@ -9,6 +9,7 @@ import static game.objects.coin.CoinArray.coins;
 public class Messages {
     public static JLabel scoreLabel;
     public static JLabel livesLabel; //  חיים
+    public static JLabel nameLabel; //  חיים
 
     static {
         scoreLabel = new JLabel("ניקוד: 0");
@@ -22,6 +23,13 @@ public class Messages {
         livesLabel.setForeground(Color.red);
         livesLabel.setBounds(10, 50, 200, 30);
         livesLabel.setLocation(350, 625);
+
+        nameLabel = new JLabel("שם");
+        nameLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        nameLabel.setForeground(Color.black);
+        nameLabel.setBounds(10, 50, 200, 30);
+        nameLabel.setLocation(250, 625);
+
 
     }
 

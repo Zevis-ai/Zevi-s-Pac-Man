@@ -97,7 +97,8 @@ public class MyJLayeredPane extends JLayeredPane {
         // הוספת תצוגת ניקוד וחיים
         add(Messages.scoreLabel, Integer.valueOf(3));
         add(Messages.livesLabel, Integer.valueOf(3));
-        
+        add(Messages.nameLabel, Integer.valueOf(3));
+
         // וידוא שהשחקן והתצוגה נראים
         player.setVisible(true);
         mapPanel.setVisible(true);

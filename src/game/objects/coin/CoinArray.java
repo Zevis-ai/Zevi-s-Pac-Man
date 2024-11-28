@@ -34,7 +34,7 @@ public class CoinArray {
                 MyJLayeredPane.playSE(1);  // השמעת צליל אכילת פרי
             }
             // סאונד אכילת מטבע
-            MyJLayeredPane.playSE(2);
+            MyJLayeredPane.playSE(1);
 
             coins[mapY][mapX].setVisible(false);
             coins[mapY][mapX] = null;

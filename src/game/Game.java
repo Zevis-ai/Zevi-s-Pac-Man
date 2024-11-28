@@ -7,11 +7,14 @@ import game.Frame.StartScreen;
 
 
 import javax.swing.*;
+
+import static game.Frame.StartScreen.createWelcomeFrame;
+
 public class Game {
     public static void main(String[] args) throws InterruptedException {
 
-        new MyFrame();
-
+        //new MyFrame();
+        createWelcomeFrame();
 //     הודעת פתיחה
 //        SwingUtilities.invokeLater(() -> {
 //            StartScreen startScreen = new StartScreen();
