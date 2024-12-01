@@ -6,6 +6,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
+// מחזיק את תמונת התפוז
 public class Orange extends JPanel {
     private Image image;
 

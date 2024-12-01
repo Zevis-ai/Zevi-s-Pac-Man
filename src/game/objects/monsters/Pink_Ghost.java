@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 
+// הרוח הורודה
 public class Pink_Ghost extends JPanel {
 
     public static Image image;

@@ -11,6 +11,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/// מחלקה חשובה המסירה מטבעות וכן מטפלת באכילת הרוחות בעת אכילת מטבע גדול
+
 public class CoinArray {
     public static JPanel[][] coins;
     public static JPanel[][] bigCoin;
@@ -23,6 +25,7 @@ public class CoinArray {
     public static Image pinkImage;
     public static Image orangeImage;
 
+    // טעינת תמונה של רוחות מתות בעת אכילת מטבע גדול
     static {
         try {
             deathImage = javax.imageio.ImageIO.read(CoinArray.class.getResource("/game/img/GhostEatable.jpg"));
@@ -36,11 +39,13 @@ public class CoinArray {
         }
     }
 
+    // הגדרת המערכים ככה א ני יודע איכן יש מטבעות
     public static void initCoins() {
         coins = new JPanel[D_Map.D_Map1.length][D_Map.D_Map1[0].length];
         bigCoin = new JPanel[D_Map.D_Map1.length][D_Map.D_Map1[0].length];
     }
 
+    // מסיר מטבעות מעדכן ניקוד וכן מחזיק טיימר של כמה זמן יהיה מותר לאכול את המטבעות
     public static void removeCoin(int mapX, int mapY){
         if (coins[mapY][mapX] != null) {
 
@@ -83,7 +88,7 @@ public class CoinArray {
                 MyJLayeredPane.playSE(1);  // השמעת צליל אכילת פרי
             }
             // סאונד אכילת מטבע
-            MyJLayeredPane.playSE(1);
+            MyJLayeredPane.playSE(2);
 
             coins[mapY][mapX].setVisible(false);
             coins[mapY][mapX] = null;

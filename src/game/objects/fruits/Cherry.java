@@ -3,7 +3,7 @@ package game.objects.fruits;
 import javax.swing.*;
 import java.awt.*;
 
-
+// מחזיק את תמונת הדובדבן
 public class Cherry extends JPanel {
     private ImageIcon gifIcon;
     private Timer appearanceTimer;

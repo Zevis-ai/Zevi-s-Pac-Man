@@ -15,6 +15,8 @@ import java.util.List;
 
 import static game.Frame.Build_a_map.life;
 
+// חלקה האחריית על ההגדרות של הרוחות כולל התזוזה
+// המחלקה מלאה בפונקציות סטטיות שכל הרוחות משתמשים איתם
 public class GhostSettings {
 
     public static int delay = 150;
@@ -106,6 +108,7 @@ public class GhostSettings {
         return image;
     }
 
+    // פונקציה המטפלת בהתנגשות של השחקן ברוחות
     public static void death(JPanel player){
         if (MyKeyListener.player != null){
             // abc שומר על מספר חיובי
@@ -128,6 +131,8 @@ public class GhostSettings {
 
                     MyJLayeredPane.setLoc(player, 180, 200);
                     MyKeyListener.player.setLocation(260,460);
+                    newX = 240;
+                    newY = 200;
                 }
 
                 if (isAteALargeCoin){

@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
+// המחלקה של הרוח הכחולה
 public class Blue_Ghost extends JPanel implements Ghost {
 
     public static Image image1;
@@ -35,6 +36,7 @@ public class Blue_Ghost extends JPanel implements Ghost {
         });
     }
 
+    // לשימוש עתידי
     public static void moreSpeed(JPanel ghost){
         Blue_Ghost.setupMoveTimer(GhostSettings.delay, ghost );
     }
@@ -46,6 +48,7 @@ public class Blue_Ghost extends JPanel implements Ghost {
         }
     }
 
+    // כולל הטיימר
     public Blue_Ghost() {
         setBounds(240, 280, 20, 20);
 

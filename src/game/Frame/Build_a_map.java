@@ -1,18 +1,16 @@
 package game.Frame;
 
-import game.objects.Player.ImagePacMan;
 import game.objects.coin.Coin;
 import game.objects.coin.CoinArray;
 import game.objects.fruits.Cherry;
-
 import javax.swing.*;
 import java.awt.*;
 
-import static game.objects.coin.CoinArray.bigCoin;
 import static game.objects.coin.CoinArray.coins;
 
+// מחלקה הבונה את המפה לפי המערך הדו מיימדי
+// ומחזיקה גם משתנים של הניקוד והחיים
 public class Build_a_map {
-
 
     public static int score;
     public static int life = 3;

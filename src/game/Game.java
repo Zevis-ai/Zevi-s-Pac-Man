@@ -1,15 +1,9 @@
 package game;
-
-
-import game.Frame.MyFrame;
 import game.Frame.MyJLayeredPane;
-import game.Frame.StartScreen;
-
-
-import javax.swing.*;
-
 import static game.Frame.StartScreen.createWelcomeFrame;
 
+
+// המחלקה הראשית הקוראת לפונקציית הפתיחה
 public class Game {
     public static void main(String[] args) throws InterruptedException {
 
@@ -20,8 +14,9 @@ public class Game {
 //            StartScreen startScreen = new StartScreen();
 //            startScreen.setVisible(true);
 //        });
-//        MyJLayeredPane.playSE(1);
-//        Thread.sleep(5000);
+        // הפעלת סאונד של תחילת המשחק
+        MyJLayeredPane.playSE(1);
+        Thread.sleep(5000);
 
     }
 }

@@ -14,31 +14,48 @@ import game.objects.monsters.Red_Ghost;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+// המחלקה שמנהלת את כל האובייקטים על המפה לפי שכבות (יורשת מ ג'יליירדפטן )
 public class MyJLayeredPane extends JLayeredPane {
+
     public static MyJLayeredPane instance;
     public static MyJPanel mapPanel;
+
     private PacManPlayer player;
+
+    // הרוחות
     private Blue_Ghost blue_ghost;
     private OrangeGhost orange_ghost;
     private Pink_Ghost pink_ghost;
-    public static Red_Ghost red_ghost;  //
+    public static Red_Ghost red_ghost;
+
+    // הפירות
     private Cherry cherry;
-    public static Cherry persiaCherry;
     public static Apple apple;
-    public static Apple persiaApple;
     public static Orange orange;
     public static Strawberry strawberry;
+
+    // פרסי הפירות
+    public static Cherry persiaCherry;
+    public static Apple persiaApple;
+
+    // תמונות של החיים של הפקמן נעלמים לפי האבודים
     private ImagePacMan imagePacMan1;
     private ImagePacMan imagePacMan2;
     private ImagePacMan imagePacMan3;
+
+    // הטיימרים למתי יופיעו הפרסים במשחק
     Timer cherryTimer;
     Timer appleTimer;
 
-    public static game.sound.Sound sound = new game.sound.Sound();
+    // טיפול בסאונד
+    public static game.Sound.Sound sound = new game.Sound.Sound();
 
+    // הבנאי של השכבות
     public MyJLayeredPane(){
+
         instance = this;
-        setLayout(null);  // חשוב! כדי שה-bounds יעבדו
+        setLayout(null);  // חשוב כדי שה-bounds יעבדו
         setPreferredSize(new Dimension(D_Map.MAP_WIDTH_SIZE, D_Map.MAP_HEIGHT_SIZE));
         
         // יצירת המפה
@@ -47,18 +64,23 @@ public class MyJLayeredPane extends JLayeredPane {
         
         // יצירת השחקן
         player = new PacManPlayer();
-        // מכשפות
+
+        // רוחות
         blue_ghost = new Blue_Ghost();
         orange_ghost = new OrangeGhost();
         pink_ghost = new Pink_Ghost();
         red_ghost = new Red_Ghost();
+
+        // פירות
         cherry = new Cherry();
-        persiaCherry = new Cherry();
         apple = new Apple();
-        persiaApple = new Apple();
         orange = new Orange();
         strawberry = new Strawberry();
-        
+
+        // פרסי הפירות
+        persiaCherry = new Cherry();
+        persiaApple = new Apple();
+
         // יצירת תמונות חיים
         imagePacMan1 = new ImagePacMan();
         imagePacMan2 = new ImagePacMan();
@@ -69,6 +91,7 @@ public class MyJLayeredPane extends JLayeredPane {
         imagePacMan2.setBounds(70, 620, 20, 20);
         imagePacMan3.setBounds(100, 620, 20, 20);
 
+        // הגדרת המיקום לפירות
         persiaCherry.setBounds(260, 340, 20, 20);
         apple.setBounds(60, 640, 20, 20);
         persiaApple.setBounds(260, 340, 20, 20);
@@ -79,10 +102,10 @@ public class MyJLayeredPane extends JLayeredPane {
 
 
         // הוספת השכבות
-        add(mapPanel, Integer.valueOf(1));    // שכבת המפה
+        add(mapPanel, Integer.valueOf(1));
         add(player, Integer.valueOf(2));
 
-        add(blue_ghost, Integer.valueOf(4));// שכבת השחקן מעל המפה
+        add(blue_ghost, Integer.valueOf(4));
         add(orange_ghost, Integer.valueOf(4));
         add(pink_ghost, Integer.valueOf(4));
         add(red_ghost, Integer.valueOf(4));
@@ -98,7 +121,6 @@ public class MyJLayeredPane extends JLayeredPane {
         add(imagePacMan2,Integer.valueOf(6));
         add(imagePacMan3,Integer.valueOf(6));
 
-        
         // הוספת תצוגת ניקוד וחיים
         add(Messages.scoreLabel, Integer.valueOf(3));
         add(Messages.livesLabel, Integer.valueOf(3));
@@ -124,6 +146,7 @@ public class MyJLayeredPane extends JLayeredPane {
         strawberry.setVisible(true);
 
 
+        // הטיימר לפרס של הדובדבן
         cherryTimer = new Timer(15000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -132,7 +155,7 @@ public class MyJLayeredPane extends JLayeredPane {
                 ((Timer)e.getSource()).stop();
             }
         });
-
+        // הטיימר לפרס של התפוח
         appleTimer = new Timer(25000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -162,6 +185,7 @@ public class MyJLayeredPane extends JLayeredPane {
         return mapPanel;
     }
 
+    // פונקציות הסאונד
     public static void playMusic(int i){
         sound.setFile(i);
         sound.play();
@@ -172,7 +196,8 @@ public class MyJLayeredPane extends JLayeredPane {
         sound.setFile(i);
         sound.play();
     }
-    
+
+    // פונקציה המעדכנת נראות תמונות החיים
     public void updateLifeImages() {
         // עדכון נראות תמונות החיים בהתאם למספר החיים הנוכחי
         switch (Build_a_map.life) {
@@ -204,6 +229,7 @@ public class MyJLayeredPane extends JLayeredPane {
         return instance;
     }
 
+    // פונקציה האחריית לעדכון המיקום של הפנאלים (רוחות וכו) ומציירת אותם שוב על הפריים
     public static void setLoc(JPanel ghost, int x, int y) {
         SwingUtilities.invokeLater(() -> {
             ghost.setLocation(x, y);

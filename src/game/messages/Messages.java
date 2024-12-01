@@ -1,7 +1,5 @@
 package game.messages;
 
-
-import game.Frame.Build_a_map;
 import game.Frame.MyJLayeredPane;
 import game.Frame.StartScreen;
 import game.data.HighScores;
@@ -10,6 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 import static game.Frame.Build_a_map.*;
 import static game.objects.coin.CoinArray.coins;
+
+// מחלקה האחריית על ההודעות של אבוד והניקוד וכו
 
 public class Messages {
     public static JLabel scoreLabel;// ניקוד
@@ -22,19 +22,19 @@ public class Messages {
         scoreLabel.setFont(new Font("Arial", Font.BOLD, 20));
         scoreLabel.setForeground(Color.black);
         scoreLabel.setBounds(10, 10, 200, 30);
-        scoreLabel.setLocation(430,625);
+        scoreLabel.setLocation(420,625);
 
         livesLabel = new JLabel("חיים: 3");
         livesLabel.setFont(new Font("Arial", Font.BOLD, 20));
         livesLabel.setForeground(Color.red);
         livesLabel.setBounds(10, 50, 200, 30);
-        livesLabel.setLocation(350, 625);
+        livesLabel.setLocation(340, 625);
 
         nameLabel = new JLabel("שם");
         nameLabel.setFont(new Font("Arial", Font.BOLD, 20));
         nameLabel.setForeground(Color.black);
         nameLabel.setBounds(10, 50, 200, 30);
-        nameLabel.setLocation(250, 625);
+        nameLabel.setLocation(235, 625);
     }
 
     // הודעת ניצחון

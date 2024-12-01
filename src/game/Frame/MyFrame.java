@@ -1,13 +1,16 @@
 package game.Frame;
 
 import game.key.MyKeyListener;
-
 import javax.swing.*;
-import java.awt.*;
+
+// מחלקה היורשת מגיפראם ובה הגדרות הפריים של המשחק
 
 public class MyFrame extends JFrame {
+
+    // השכבה
     private MyJLayeredPane layeredPane;
 
+    // הבנאי של הגדרות הפריים
     public MyFrame(){
         layeredPane = new MyJLayeredPane();
         add(layeredPane);

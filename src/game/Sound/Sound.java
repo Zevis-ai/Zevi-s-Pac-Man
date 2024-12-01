@@ -1,4 +1,4 @@
-package game.sound;
+package game.Sound;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -7,6 +7,7 @@ import javax.sound.sampled.LineEvent;
 import javax.sound.sampled.LineListener;
 import java.net.URL;
 
+// מחלקה הטוענת סאונד
 public class Sound {
     Clip clip;
     URL[] soundURL = new URL[5];
@@ -26,7 +27,7 @@ public class Sound {
             AudioInputStream ais = AudioSystem.getAudioInputStream(soundURL[i]);
             clip = AudioSystem.getClip();
             clip.open(ais);
-            
+
             // הוספת מאזין לסיום הצליל
             clip.addLineListener(new LineListener() {
                 @Override
@@ -36,7 +37,7 @@ public class Sound {
                     }
                 }
             });
-            
+
         } catch (Exception e){
             System.out.println("Error loading sound: " + e.getMessage());
             e.printStackTrace();

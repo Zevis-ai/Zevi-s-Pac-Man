@@ -3,7 +3,7 @@ package game.objects.Player;
 import javax.swing.*;
 import java.awt.*;
 
-
+// תמונת השחקן pac man
 public class ImagePacMan extends JPanel {
     private ImageIcon gifIcon;
 

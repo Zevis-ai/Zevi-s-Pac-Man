@@ -8,6 +8,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
+// הרוח האדומה
 public class Red_Ghost extends JPanel implements Ghost {
 
     public static Image image1;

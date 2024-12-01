@@ -1,5 +1,8 @@
 package game.Frame;
 
+// מחלקה המחזיקה את המערך הדו מיימדי כולל מקרא
+// וכן מחזיקה בתוכה את המשתנים הקבועים של גודל הפריים והאריחים
+
 public class D_Map {
 
     public static final int CELL_SIZE = 20;  // גודל כל תא במפה

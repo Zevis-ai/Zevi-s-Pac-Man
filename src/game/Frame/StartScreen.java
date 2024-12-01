@@ -8,7 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.List;
-
+// מחלקה האחריית על חלון הפתיחה שלפני המשחק
+// ומקבלת את הפלט של שם המשתמש
 public class StartScreen{
 
     public static String userName;
@@ -58,7 +59,10 @@ public class StartScreen{
        JPanel centerPanel = new JPanel(){
            protected void paintComponent(Graphics g){
                super.paintComponent(g);
-               ImageIcon imageIcon = new ImageIcon("src/game/img/5904435870348461557.jpg");
+               ImageIcon imageIcon = new ImageIcon(getClass().getResource("/game/img/5904435870348461557.jpg"));
+               if (imageIcon.getImage() == null) {
+                   System.out.println("לא הצלחתי לטעון את תמונת הפתיחה");
+               }
                g.drawImage(imageIcon.getImage(), 0,0,getWidth(),getHeight(), null);
            }
        };
@@ -100,9 +104,16 @@ public class StartScreen{
                // יצירת שיאה לקבלת שוב שם
                JOptionPane.showMessageDialog(welcomeFrame, "שחכת להזין את שמך","אופס..",0);
            } else {
+               System.out.println("מתחיל משחק חדש עבור: " + userName);
                //סגירת החלון והפעלת המשחק
                welcomeFrame.dispose();
-               new MyFrame();
+               try {
+                   new MyFrame();
+                   System.out.println("המשחק נפתח בהצלחה");
+               } catch (Exception ex) {
+                   System.out.println("שגיאה בפתיחת המשחק: " + ex.getMessage());
+                   ex.printStackTrace();
+               }
            }
        });
 
@@ -111,6 +122,7 @@ public class StartScreen{
        welcomeFrame.setVisible(true);
    }
 
+    // מציג טבלת שיאים
     private static void showHighScores(JFrame welcomeFrame) {
        JDialog dialog = new JDialog(welcomeFrame, "טבלת שיאים", true);
        dialog.setLayout(new BorderLayout());
@@ -144,6 +156,7 @@ public class StartScreen{
        dialog.setVisible(true);
     }
 
+    // מחזיר את שם המשתמש
     public static String getUserName() {
         return userName;
     }

@@ -3,6 +3,7 @@ package game.objects.coin;
 import javax.swing.*;
 import java.awt.*;
 
+// מחלקה של המטבעות הגדולים על המפה GIF מהבהב
 public class Coin extends JPanel {
     private ImageIcon gifIcon;
 

@@ -5,6 +5,7 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
+// הגדרות השחקן וכן החלפת תמונות בעת שינוי כיוון
 public class PacManPlayer extends JPanel {
     private Map<Direction, ImageIcon> pacmanImages;
     private Direction currentDirection;

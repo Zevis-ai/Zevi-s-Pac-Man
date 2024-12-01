@@ -8,7 +8,6 @@ import game.objects.Player.Direction;
 import game.objects.Player.PacManPlayer;
 import game.objects.coin.CoinArray;
 import game.objects.fruits.EatFruitPrizes;
-import game.objects.monsters.Blue_Ghost;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -18,17 +17,21 @@ import static game.Frame.Build_a_map.life;
 import static game.Frame.Build_a_map.score;
 import static game.messages.Messages.ScoreAnnouncement;
 
+// מחלקה מאוד חשובה של קבלת המקשים ותזוזות השחקן
+// KeyListener יושת מ
 public class MyKeyListener implements KeyListener {
+
     public static PacManPlayer player;
-    public static Timer moveTimer;
     public static int MOVE_SPEED = 20;  // מהירות תנועה - תואמת לגודל התא
-    public static int delay = 200;
+    public static int delay = 200; // מהירות השחקן
+    public static Timer moveTimer;// טיימר למהירות השחקן מוגדר לפי ה delay
 
     public MyKeyListener(PacManPlayer player) {
         this.player = player;
         setupMoveTimer(delay);
     }
 
+    // הטיימר של הפקמן השחקן
     public static void setupMoveTimer(int delay) {
         moveTimer = new Timer(delay, e -> {
             if (player.getDirection() != null) {
@@ -42,6 +45,7 @@ public class MyKeyListener implements KeyListener {
     public void keyTyped(KeyEvent e) {
     }
 
+    // קבלת המקשים
     @Override
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
@@ -60,6 +64,7 @@ public class MyKeyListener implements KeyListener {
         }
     }
 
+    // לשמור שימשך לזוז אפילו שלא לוחצים
     @Override
     public void keyReleased(KeyEvent e) {
         if ((e.getKeyCode() == KeyEvent.VK_LEFT && player.getDirection() == Direction.LEFT) ||
@@ -70,6 +75,7 @@ public class MyKeyListener implements KeyListener {
         }
     }
 
+    // פונקציה של תזוזות השחקן
     public static void movePlayer() {
         int currentX = player.getX();
         int currentY = player.getY();
@@ -114,6 +120,7 @@ public class MyKeyListener implements KeyListener {
         cave(newX,newY);
     }
 
+    // שלא יעלה על הקירות
     public static void cenMove(int mapX, int mapY, JPanel panel, int newX, int newY){
         if (mapX >= 0 && mapX < D_Map.D_Map1[0].length &&
                 mapY >= 0 && mapY < D_Map.D_Map1.length &&
@@ -129,7 +136,6 @@ public class MyKeyListener implements KeyListener {
     }
 
     // הגדרת מערה
-
     public static void cave(int newX, int newY){
         if (newX == 520 && newY == 280) {
             player.setLocation(0, 280);

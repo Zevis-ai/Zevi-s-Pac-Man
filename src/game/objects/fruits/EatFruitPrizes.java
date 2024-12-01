@@ -5,6 +5,7 @@ import game.Frame.MyJLayeredPane;
 import game.key.MyKeyListener;
 import game.messages.Messages;
 
+// מחלקה האחריית על עדכון הניקוד והסרת הפירות בעת שהשחקן עולה עליהם
 public class EatFruitPrizes {
     public static void removeFruit() {
         // בדיקת התנגשות עם הדובדבן

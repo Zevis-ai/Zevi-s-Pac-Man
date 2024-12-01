@@ -2,6 +2,7 @@ package game.Frame;
 import javax.swing.*;
 import java.awt.*;
 
+// מחלקה האחריית על הגדרות הפנאל הראשי המחזיק את כל הפנאלים הקטנים
 public class MyJPanel extends JPanel {
 
     public MyJPanel(){

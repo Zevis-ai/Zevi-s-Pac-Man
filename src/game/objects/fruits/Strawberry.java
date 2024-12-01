@@ -6,6 +6,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
+// מחזיק את תמונת הענבים
 public class Strawberry extends JPanel {
     Image image;
 
@@ -21,6 +22,7 @@ public class Strawberry extends JPanel {
             System.out.println("התמונה של התות");
         }
     }
+
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (image != null) {

@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 
+// הרוח הכתומה טעינת התמונה ועוד
 public class OrangeGhost extends JPanel {
 
     public static Image image;
