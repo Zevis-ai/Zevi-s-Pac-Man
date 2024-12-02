@@ -40,26 +40,27 @@ Just clone the repository and run the main class to start playing!
   <img src="https://media.giphy.com/media/XK8kZKJSPTziw/giphy.gif" width="250" />
 </div>
 
-<table align="center">
+<table align="center" style="border-collapse: separate; border-spacing: 15px;">
   <tr>
-    <td align="center">
+    <td align="center" style="border: 2px solid #ccc; border-radius: 10px; padding: 10px;">
       <img src="https://github.com/Zevis-ai/Zevi-s-Pac-Man/blob/master/src/game/img/%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%9E%D7%A1%D7%9A%202024-11-25%20145907.png?raw=true" width="250" />
     </td>
   </tr>
   <tr>
-    <td align="center">
+    <td align="center" style="border: 2px solid #ccc; border-radius: 10px; padding: 10px;">
       <img src="צילום מסך 2024-12-02 164218.png" width="250" />
     </td>
-    <td align="center">
+    <td align="center" style="border: 2px solid #ccc; border-radius: 10px; padding: 10px;">
       <img src="צילום מסך 2024-12-02 164228.png" width="250" />
     </td>
   </tr>
   <tr>
-    <td align="center" colspan="2">
+    <td align="center" colspan="2" style="border: 2px solid #ccc; border-radius: 10px; padding: 10px;">
       <img src="צילום מסך 2024-12-02 164314.png" width="500" />
     </td>
   </tr>
 </table>
+
 
 
 
