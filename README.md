@@ -44,6 +44,10 @@ Just clone the repository and run the main class to start playing!
   <img src="https://github.com/Zevis-ai/Zevi-s-Pac-Man/blob/master/src/game/img/%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%9E%D7%A1%D7%9A%202024-11-25%20145907.png?raw=true" width="500" />
 </div>
 
+<div align="center">
+  <img src="צילום מסך 2024-12-02 164218.png" width="500" />
+</div>
+
 ## 🎮 How to Play
 
 - Use the arrow keys to move Pac-Man
