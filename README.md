@@ -62,6 +62,7 @@ Just clone the repository and run the main class to start playing!
 </table>
 
 
+
 ## 🎮 How to Play
 
 - Use the arrow keys to move Pac-Man
