@@ -48,6 +48,10 @@ Just clone the repository and run the main class to start playing!
   <img src="צילום מסך 2024-12-02 164218.png" width="500" />
 </div>
 
+<div align="center">
+  <img src="צילום מסך 2024-12-02 164228.png" width="500" />
+</div>
+
 ## 🎮 How to Play
 
 - Use the arrow keys to move Pac-Man
