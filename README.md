@@ -60,7 +60,7 @@ Just clone the repository and run the main class to start playing!
   <!-- שורה שלישית: תמונה אחת גדולה -->
   <tr>
     <td colspan="2" style="border: 2px solid #FF9800; border-radius: 15px; padding: 10px;">
-      <img src="צילום מסך 2024-12-02 164314.png" width="500" alt="תמונה גדולה תחתונה" />
+      <img src="https://github.com/Zevis-ai/Zevi-s-Pac-Man/blob/master/img%20for%20readme/%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%9E%D7%A1%D7%9A%202024-12-02%20164314.png?raw=true" width="500" alt="תמונה גדולה תחתונה" />
     </td>
   </tr>
 </table>
