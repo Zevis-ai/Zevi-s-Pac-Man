@@ -17,7 +17,7 @@ public class EatFruitPrizes {
                 MyJLayeredPane.persiaCherry.setVisible(false);
                 Build_a_map.score += 50;
                 Messages.scoreLabel.setText("ניקוד: " + Build_a_map.score);
-                MyJLayeredPane.playSE(1);
+                MyJLayeredPane.playSE(2);
             }
         }
 
