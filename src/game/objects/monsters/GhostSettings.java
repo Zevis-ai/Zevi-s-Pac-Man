@@ -119,6 +119,7 @@ public class GhostSettings {
 //               player.setLocation(Blue_Ghost.START);
 
                 if (!isAteALargeCoin) {
+                    MyJLayeredPane.playSE(0);
                     life--;
                     // עדכון תמונות החיים
                     MyJLayeredPane.getInstance().updateLifeImages();
