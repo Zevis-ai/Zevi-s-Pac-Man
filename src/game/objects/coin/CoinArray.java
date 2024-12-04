@@ -85,7 +85,7 @@ public class CoinArray {
 
                 // עדכון תצוגת הניקוד
                 Messages.scoreLabel.setText("ניקוד: " + Build_a_map.score);
-                MyJLayeredPane.playSE(1);  // השמעת צליל אכילת פרי
+                MyJLayeredPane.playSE(2);  // השמעת צליל אכילת 
             }
             // סאונד אכילת מטבע
             MyJLayeredPane.playSE(2);
