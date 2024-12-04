@@ -109,6 +109,7 @@ public class MyKeyListener implements KeyListener {
         Messages.nameLabel.setText("שם: " + StartScreen.getUserName());
 
         if (life < 0){
+            MyJLayeredPane.playSE(0);
             Messages.gameOver(score);
         }
         // עדכון תמונות החיים
