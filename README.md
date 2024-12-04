@@ -40,9 +40,34 @@ Just clone the repository and run the main class to start playing!
   <img src="https://media.giphy.com/media/XK8kZKJSPTziw/giphy.gif" width="250" />
 </div>
 
-<div align="center">
-  <img src="https://github.com/Zevis-ai/Zevi-s-Pac-Man/blob/master/src/game/img/%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%9E%D7%A1%D7%9A%202024-11-25%20145907.png?raw=true" width="500" />
-</div>
+
+<table align="center" style="border-collapse: separate; border-spacing: 15px; text-align: center;">
+  <!-- שורה ראשונה: תמונה אחת גדולה -->
+  <tr>
+    <td colspan="2" style="border: 2px solid #4CAF50; border-radius: 15px; padding: 10px;">
+      <img src="https://github.com/Zevis-ai/Zevi-s-Pac-Man/blob/master/img%20for%20readme/%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%9E%D7%A1%D7%9A%202024-12-02%20164218.png?raw=true" width="500" alt="תמונה ראשונה גדולה" />
+    </td>
+  </tr>
+  <!-- שורה שנייה: שתי תמונות קטנות -->
+  <tr>
+    <td style="border: 2px solid #2196F3; border-radius: 15px; padding: 10px;">
+      <img src="https://github.com/Zevis-ai/Zevi-s-Pac-Man/blob/master/img%20for%20readme/%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%9E%D7%A1%D7%9A%202024-12-02%20164228.png?raw=true" width="250" alt="תמונה קטנה 1" />
+    </td>
+    <td style="border: 2px solid #2196F3; border-radius: 15px; padding: 10px;">
+      <img src="https://github.com/Zevis-ai/Zevi-s-Pac-Man/blob/master/src/game/img/%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%9E%D7%A1%D7%9A%202024-11-25%20145907.png?raw=true" width="250" alt="תמונה קטנה 2" />
+    </td>
+  </tr>
+  <!-- שורה שלישית: תמונה אחת גדולה -->
+  <tr>
+    <td colspan="2" style="border: 2px solid #FF9800; border-radius: 15px; padding: 10px;">
+      <img src="https://github.com/Zevis-ai/Zevi-s-Pac-Man/blob/master/img%20for%20readme/%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%9E%D7%A1%D7%9A%202024-12-02%20164314.png?raw=true" width="500" alt="תמונה גדולה תחתונה" />
+    </td>
+  </tr>
+</table>
+
+
+
+
 
 ## 🎮 How to Play
 
