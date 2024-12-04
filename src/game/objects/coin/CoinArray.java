@@ -28,7 +28,7 @@ public class CoinArray {
     // טעינת תמונה של רוחות מתות בעת אכילת מטבע גדול
     static {
         try {
-            deathImage = javax.imageio.ImageIO.read(CoinArray.class.getResource("/game/img/GhostEatable.jpg"));
+            deathImage = javax.imageio.ImageIO.read(CoinArray.class.getResource("/game/img/eat.png"));
 
             redImage = javax.imageio.ImageIO.read(CoinArray.class.getResource("/game/img/redGhost.png"));
             blueImage = javax.imageio.ImageIO.read(CoinArray.class.getResource("/game/img/blueGhost.png"));

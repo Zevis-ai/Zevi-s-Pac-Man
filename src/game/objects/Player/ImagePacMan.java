@@ -15,7 +15,7 @@ public class ImagePacMan extends JPanel {
     }
 
     public void loadGif() {
-        gifIcon = new ImageIcon("C:\\Users\\JBH\\IdeaProjects\\Zevis-Pac-Man\\src\\game\\img\\pacmanleft.jpg");
+        gifIcon = new ImageIcon("src\\game\\img\\pacmanleft.jpg");
         // התאמת גודל התמונה
         Image img = gifIcon.getImage();
         Image newimg = img.getScaledInstance(20, 20, Image.SCALE_SMOOTH);

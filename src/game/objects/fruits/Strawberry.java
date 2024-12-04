@@ -17,7 +17,7 @@ public class Strawberry extends JPanel {
 
     private void loadImage(){
         try {
-            image = ImageIO.read(new File("C:\\Users\\JBH\\IdeaProjects\\Zevis-Pac-Man\\src\\game\\img\\strawberry.png"));
+            image = ImageIO.read(new File("src\\game\\img\\strawberry.png"));
         } catch (IOException e){
             System.out.println("התמונה של התות");
         }

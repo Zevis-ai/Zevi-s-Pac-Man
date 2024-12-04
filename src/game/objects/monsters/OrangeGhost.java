@@ -64,7 +64,7 @@ public class OrangeGhost extends JPanel {
     }
 
     public void loadImage() {
-        File file = new File("C:\\Users\\JBH\\IdeaProjects\\Zevis-Pac-Man\\src\\game\\img\\orangeGhost.png");
+        File file = new File("src\\game\\img\\orangeGhost.png");
         image  = GhostSettings.loadImage(this, file);
     }
 

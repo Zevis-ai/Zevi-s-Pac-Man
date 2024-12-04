@@ -14,7 +14,7 @@ public class Coin extends JPanel {
     }
 
     public void loadGif() {
-        gifIcon = new ImageIcon("C:\\Users\\JBH\\Downloads\\gifmaker_me.gif");
+        gifIcon = new ImageIcon("src/game/img/BigCoin.gif");
     }
 
     @Override

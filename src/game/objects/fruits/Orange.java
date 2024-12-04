@@ -17,7 +17,7 @@ public class Orange extends JPanel {
 
     private void loadImage(){
         try {
-            image = ImageIO.read(new File("C:\\Users\\JBH\\IdeaProjects\\Zevis-Pac-Man\\src\\game\\img\\orange.png"));
+            image = ImageIO.read(new File("src\\game\\img\\orange.png"));
         } catch (IOException e){
             System.out.println("התמונה של התפוז");
         }

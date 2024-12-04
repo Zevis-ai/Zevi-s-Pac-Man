@@ -15,7 +15,7 @@ public class Cherry extends JPanel {
     }
 
     public void loadGif() {
-        gifIcon = new ImageIcon("C:\\Users\\JBH\\IdeaProjects\\Zevis-Pac-Man\\src\\game\\img\\cherry-removebg-preview.png");
+        gifIcon = new ImageIcon("src\\game\\img\\cherry-removebg-preview.png");
         Image img = gifIcon.getImage();
         Image newimg = img.getScaledInstance(20, 20, Image.SCALE_SMOOTH);
         gifIcon = new ImageIcon(newimg);

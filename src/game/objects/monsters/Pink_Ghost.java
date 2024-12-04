@@ -65,7 +65,7 @@ public class Pink_Ghost extends JPanel {
     }
 
     public void loadImage() {
-        File file = new File("C:\\Users\\JBH\\IdeaProjects\\Zevis-Pac-Man\\src\\game\\img\\pinkGhost.png");
+        File file = new File("src\\game\\img\\pinkGhost.png");
         image  = GhostSettings.loadImage(this, file);
     }
 

@@ -17,7 +17,7 @@ public class Apple extends JPanel {
 
     private void loadImage() {
         try {
-            image = ImageIO.read(new File("C:\\Users\\JBH\\IdeaProjects\\Zevis-Pac-Man\\src\\game\\img\\Apple.png"));
+            image = ImageIO.read(new File("src\\game\\img\\Apple.png"));
         } catch (IOException e) {
             System.err.println("התמונה של התפוח");
             setOpaque(true);
